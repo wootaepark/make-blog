@@ -34,6 +34,8 @@ public class BlogApiController {
 
         return ResponseEntity.ok()
                 .body(articles);
+        // return ResponsseEntity.status(HttpStatus.OK).body(articles); 도 가능함
+        //  이 경우 유연성이 더 있다. .OK 를 CREATED,NO CONTENT 등으로 바꿀 수 있는 장점
     }
     @GetMapping("/api/articles/{id}")
     public ResponseEntity<ArticleResponse> findArticle(@PathVariable long id){
