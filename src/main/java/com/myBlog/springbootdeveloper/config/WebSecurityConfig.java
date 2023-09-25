@@ -31,7 +31,7 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         return http
-                .authorizeRequests() //인증,인가 설정
+                .authorizeRequests() //인증,인가 설정, 아래는 로그인을 하지 않아도 접속 가능한 url (fetch 로 rest api 로 접속 시에도 여기에 적어주는 것이 필요하다.)
                 .requestMatchers("/login","/signup","/user").permitAll()
                 .anyRequest().authenticated()
                 .and()
